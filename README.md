@@ -4,9 +4,8 @@ This project is a serverless application built using AWS services, which automat
 
 AWS Lambda is utilized to remove the need for servers, making this a serverless event-driven pipeline.
 
-# Architecture
+# Architecture:
 
-## Diagram:
 ![](images/cs79c-final-drawio.png)
 
 ## AWS Services Used:
@@ -16,6 +15,7 @@ AWS Lambda is utilized to remove the need for servers, making this a serverless 
 - SNS
 - IAM
 - CloudWatch
+- CloudFormation
 
 ## Process:
 - A text file is uploaded to the S3 bucket
@@ -39,7 +39,7 @@ AWS Lambda is utilized to remove the need for servers, making this a serverless 
 
 - Within the S3 trigger, check 'all objects create events' and set the prefix to 'incoming/'
 
-- Open the SNS topic created by the template, and create an email subscription.(Ensure you confirm it)
+- Open the SNS topic created by the template, and create an email subscription **(ensure you confirm it)**
 
 - Test the application by uploading the provided test.txt file to a folder named 'incoming' within the S3 bucket created by the template
 
@@ -47,19 +47,19 @@ AWS Lambda is utilized to remove the need for servers, making this a serverless 
 
 # Evidence:
 
-- Successful stack deployment
+### - Successful stack deployment
 ![](images/evidence1.png)
 
-- Text file uploaded to S3
+### - Text file uploaded to S3
 ![](images/evidence2.png)
 
-- Lambda processing file successfully
+### - Lambda processing file successfully
 ![](images/evidence3.png)
 
-- Results stored in DynamoDB
+### - Results stored in DynamoDB
 ![](images/evidence4.png)
 
-- SNS email notification received
+### - SNS email notification received
 ![](images/evidence5.png)
 
 
