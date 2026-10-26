@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CS79C final project
+
+Resources:
+  UploadBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'cs79c-files-${AWS::AccountId}-${AWS::Region}'
+
+  ResultsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: cs79c-file-results
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: fileName
+          AttributeType: S
+      KeySchema:
+        - AttributeName: fileName
+          KeyType: HASH
+
+  AlertsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: cs79c-file-alerts
+
+Outputs:
+  BucketName:
+    Value: !Ref UploadBucket

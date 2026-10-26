@@ -45,13 +45,21 @@ AWS Lambda is utilized to remove the need for servers, making this a serverless 
 
 - Ensure the output within the email notification and DynamoDB table returns 7 words and 3 lines.
 
-#Evidence:
+# Evidence:
+
+- Successful stack deployment
 ![](images/evidence1.png)
 
+- Text file uploaded to S3
 ![](images/evidence2.png)
 
+- Lambda processing file successfully
 ![](images/evidence3.png)
 
+- Results stored in DynamoDB
 ![](images/evidence4.png)
+
+- SNS email notification received
+![](images/evidence5.png)
 
 
